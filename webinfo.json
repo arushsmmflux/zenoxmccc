@@ -1,0 +1,15 @@
+{
+    "upi": "BHARATPE.8E0P0N7O0Y20773@fbpe",
+    "merchant_name": "Garena Top Up",
+    "store_name": "Garena Top Up",
+    "support": "",
+    "announcement": "",
+    "maintenance": false,
+    "payment_mode": "both",
+    "manual_upi_enabled": true,
+    "auto_payment_enabled": false,
+    "auto_provider": "paytm",
+    "paytm_mid": "",
+    "bharatpe_merchant_id": "",
+    "auto_verification_note": "Requires official payment gateway/API access and signed webhook verification."
+}

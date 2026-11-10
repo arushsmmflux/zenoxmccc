@@ -1,0 +1,11 @@
+UID API endpoint update
+
+The existing website UI and verification flow are unchanged. UID verification calls the same-origin PHP proxy:
+  api/verify.php?uid=YOUR_UID
+
+The PHP proxy requests the exact upstream endpoint:
+  https://spadexhub.xyz/ffuid2info/ffinfo.php?api=spade_5bcca99bad91cde6&uid=YOUR_UID
+
+The upstream JSON is passed through unchanged. The browser maps data.basicInfo.nickname, accountId, level, region, liked and hasElitePass, plus data.clanBasicInfo.clanName.
+
+Upload the ZIP contents over the existing site files, preserving the directory structure. PHP cURL is recommended; allow_url_fopen is supported as a fallback.

@@ -1,0 +1,19 @@
+WEBSITE REPAIR PACKAGE — deployment notes
+
+Included:
+- Original PHP storefront, store, admin, API endpoints, product data, and image assets.
+- Removed stale HTTrack mirror metadata from index.php and store.php.
+- Added responsive CSS safety overrides for image sizing, horizontal overflow, form controls, and narrow mobile screens.
+
+IMPORTANT BEFORE GO-LIVE:
+1. Upload the entire folder preserving its directory structure; do not upload index.php alone.
+2. Confirm PHP 8.x is enabled and cURL is available (or allow_url_fopen is enabled for the UID lookup proxy).
+3. Confirm api/products_data.json, webinfo.json, and the site root are writable only where required by your host. orders.json must be writable by PHP for order creation.
+4. Change the default admin password immediately. The current admin.php contains a default credential; do not leave it on a public production site.
+5. UID lookup depends on third-party endpoints in api/verify.php. If those endpoints are down or change their response schema, lookup will fail; configure a trusted authorized provider.
+6. Payment is NOT automatically verified by a QR image or a user-entered UTR. Configure an official payment gateway/provider API and signed server-side webhook before fulfilling orders or marking them paid. Never treat a screenshot/typed UTR as proof of payment.
+7. Product prices are the values in api/products_data.json, not live market rates. Verify each price and inventory in Admin before publishing; do not advertise these as official Garena rates.
+8. Test UID verification, product selection, order creation, UTR submission/review, tracking, admin login, image URLs, and mobile layout on the actual hosting environment.
+9. Use only authorized Garena branding/assets and make clear whether the store is independent; do not imply official affiliation unless authorized.
+
+No live deployment, payment provider credentials, or real UID API credentials were available in this workspace, so these cannot be verified from the ZIP alone.

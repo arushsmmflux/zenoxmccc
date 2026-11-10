@@ -1,0 +1,25 @@
+V5 DUAL PAYMENT ADMIN SETTINGS
+
+Added:
+- Admin > Payments has separate Normal UPI settings and Payment Verification Modes.
+- Select Both / Normal UPI only / Auto verification only (API required).
+- Configure provider selection (Paytm or BharatPe) and merchant IDs.
+- Enable/disable manual UPI / UTR review.
+- Storefront reads UPI ID and merchant display name from webinfo.json; Admin edits apply without changing JS.
+
+IMPORTANT AUTO-VERIFICATION LIMIT:
+This ZIP is configured for Both modes, but automatic verification is deliberately NOT activated.
+Merchant QR accounts, a UPI ID, static QR, or Merchant ID alone do not provide a secure server-side transaction feed.
+To activate auto verification, obtain official provider API / Payment Gateway access and webhook configuration. Integrate signed callback validation and server-side transaction status verification, matching order ID, exact amount, currency, merchant ID, and final success status. Never mark Paid from a screenshot, redirect, typed UTR, or unverified webhook.
+Paytm official documentation:
+https://www.paytmpayments.com/docs/payment-status
+https://www.paytmpayments.com/docs/jscheckout-verify-payment
+
+Deployment:
+1. Back up current site.
+2. Upload all files from this ZIP to website root, preserving folders.
+3. Ensure PHP can write webinfo.json, orders.json, and admin data files.
+4. Log into Admin > Payments and confirm UPI ID / merchant name.
+5. Keep Manual UPI enabled until official API integration is completed.
+6. Test with a low-value payment and verify UTR manually against merchant app/statement.
+7. Use HTTPS and block public HTTP access to orders.json and other private JSON files.

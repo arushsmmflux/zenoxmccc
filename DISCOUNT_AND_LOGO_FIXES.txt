@@ -1,0 +1,10 @@
+DISCOUNT AND LOGO FIXES
+
+- Spin Wheel reward range is now 5% through 15%; no zero-discount result is possible.
+- Reward is deterministic per UID and calculated the same way in JavaScript and PHP, so the displayed reward matches the server-created order discount.
+- Saved browser rewards below 5% are rejected.
+- Added garena-mark.png, cropped to remove excessive transparent margins; header, footer, favicon, and Spin Wheel references now use this asset.
+- CSS constrains logo dimensions and uses object-fit: contain to avoid stretching.
+- Product old-price discounts were reviewed in api/products_data.json; listed product prices already exceed the 5% minimum discount compared with their old prices.
+
+IMPORTANT: This discount calculation is suitable for consistent display/testing but is not a secure promotion engine by itself. For production, issue signed/server-stored rewards so a user cannot alter localStorage and claim another discount. Verify payment with the payment provider server-side before marking orders paid.

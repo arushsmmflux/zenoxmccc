@@ -1,0 +1,9 @@
+FREE FIRE INDIA THEME + VERIFIED UID DISCOUNT
+
+- Dark charcoal, red, orange and gold gaming-inspired visual theme.
+- Valid verified UID receives a stable UID-specific discount from 10% to 15% inclusive.
+- Product cards show original and discounted prices.
+- Checkout, PhonePe/Paytm/UPI deep links and QR use the discounted amount.
+
+IMPORTANT PRODUCTION LIMITATION:
+The supplied project uses browser-side UID verification and direct UPI deep links. This update applies the discount in the browser, so it is not tamper-proof against technically skilled visitors. The project has no server-side order ledger or payment-provider webhook confirmation. For secure production enforcement, add server-side order creation, server-side discount calculation, and payment gateway/webhook verification. UPI app redirects alone cannot confirm payment.
